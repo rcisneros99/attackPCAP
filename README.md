@@ -1,10 +1,14 @@
-Network Attack Traffic Generator
+PCAP generator
 
 A tool for generating and analyzing network attack traffic patterns for testing and research purposes.
 
+NOTE
+
+This tool is intended for research and testing purposes only. Do not use it to generate attacks against systems you don't own or have explicit permission to test!
+
 OVERVIEW
 
-This project provides a framework for:
+This project provides the following system:
 - Generating various types of network attack traffic
 - Creating PCAP files with customizable attack distributions
 - Analyzing generated PCAP files for validation
@@ -33,8 +37,8 @@ SUPPORTED ATTACK TYPES
 INSTALLATION
 
 1. Clone the repository:
-   git clone https://github.com/yourusername/network-attack-generator.git
-   cd network-attack-generator
+   git clone https://github.com/rcisneros99/attackPCAP.git
+   cd attackPCAP
 
 2. Install dependencies:
    pip install -r requirements.txt
@@ -110,11 +114,3 @@ OUTPUT
 - Generated PCAP files are saved in the pcaps/ directory
 - Analysis visualizations are saved as PNG files
 - Logs are stored in the logs/ directory
-
-NOTE
-
-This tool is intended for research and testing purposes only. Do not use it to generate attacks against systems you don't own or have explicit permission to test.
-
-LICENSE
-
-MIT License (or your chosen license) 

@@ -12,19 +12,19 @@ class PcapAnalyzer:
         self.filename = os.path.basename(pcap_file)
         
     def basic_stats(self):
-        """Get basic statistics about the PCAP file"""
+        """Get basic stats about the PCAP - useful for quick checks"""
+        # Initialize counters
         stats = {
             'total_packets': len(self.packets),
-            'protocols': Counter(),
-            'ports': Counter(),
-            'ip_addresses': Counter(),
+            'protocols': Counter(),  # TCP, UDP, etc
+            'ports': Counter(),      # Port numbers
+            'ip_addresses': Counter(),  # Might add geolocation later
         }
         
+        # Count everything - there's probably a more elegant way to do this
         for pkt in self.packets:
-            # Protocol analysis
             if 'TCP' in pkt:
                 stats['protocols']['TCP'] += 1
-                # Port analysis
                 stats['ports'][f'TCP/{pkt.dport}'] += 1
             elif 'UDP' in pkt:
                 stats['protocols']['UDP'] += 1
@@ -32,7 +32,6 @@ class PcapAnalyzer:
             elif 'ICMP' in pkt:
                 stats['protocols']['ICMP'] += 1
             
-            # IP analysis
             if 'IP' in pkt:
                 stats['ip_addresses'][pkt['IP'].dst] += 1
         
