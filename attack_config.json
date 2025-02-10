@@ -1,0 +1,17 @@
+{
+    "num_records": 1000,
+    "distribution": {
+        "ddos_attack_hoic": 10,
+        "ddos_attack_loic_http": 10,
+        "dos_attack_hulk": 10,
+        "bot_activity": 10,
+        "ftp_bruteforce": 10,
+        "infiltration": 10,
+        "dos_attack_slowhttptest": 10,
+        "dos_attack_goldeneye": 5,
+        "dos_attack_slowloris": 5,
+        "brute_force_web": 10,
+        "brute_force_xss": 5,
+        "sql_injection": 5
+    }
+} 

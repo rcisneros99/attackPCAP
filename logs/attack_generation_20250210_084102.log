@@ -1,0 +1,16 @@
+2025-02-10 08:41:02,278 - INFO - Starting attack generation for 1000 records
+2025-02-10 08:41:02,300 - INFO - Generating 100 packets for ddos_attack_hoic
+2025-02-10 08:41:02,312 - INFO - Generating 100 packets for ddos_attack_loic_http
+2025-02-10 08:41:02,323 - INFO - Generating 100 packets for dos_attack_hulk
+2025-02-10 08:41:02,334 - INFO - Generating 100 packets for bot_activity
+2025-02-10 08:41:02,340 - INFO - Generating 100 packets for ftp_bruteforce
+2025-02-10 08:41:02,351 - INFO - Generating 100 packets for infiltration
+2025-02-10 08:41:02,380 - INFO - Generating 100 packets for dos_attack_slowhttptest
+2025-02-10 08:41:02,391 - INFO - Generating 50 packets for dos_attack_goldeneye
+2025-02-10 08:41:02,397 - INFO - Generating 50 packets for dos_attack_slowloris
+2025-02-10 08:41:02,403 - INFO - Generating 100 packets for brute_force_web
+2025-02-10 08:41:02,414 - INFO - Generating 50 packets for brute_force_xss
+2025-02-10 08:41:02,419 - INFO - Generating 50 packets for sql_injection
+2025-02-10 08:41:02,425 - INFO - Shuffling packets...
+2025-02-10 08:41:02,425 - INFO - Saving 1100 packets to pcaps/attack_traffic_20250210_084102.pcap
+2025-02-10 08:41:02,601 - INFO - PCAP file saved successfully
