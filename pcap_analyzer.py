@@ -18,10 +18,9 @@ class PcapAnalyzer:
             'total_packets': len(self.packets),
             'protocols': Counter(),  # TCP, UDP, etc
             'ports': Counter(),      # Port numbers
-            'ip_addresses': Counter(),  # Might add geolocation later
+            'ip_addresses': Counter(),
         }
         
-        # Count everything - there's probably a more elegant way to do this
         for pkt in self.packets:
             if 'TCP' in pkt:
                 stats['protocols']['TCP'] += 1
